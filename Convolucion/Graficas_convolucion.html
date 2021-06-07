@@ -1,0 +1,283 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Gr&aacute;ficas de las funciones  e </title><meta name="generator" content="MATLAB 9.7"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2021-06-07"><meta name="DC.source" content="Graficas_convolucion.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Gr&aacute;ficas de las funciones <img src="Graficas_convolucion_eq14833433867325483769.png" alt="$x(t)$"> e <img src="Graficas_convolucion_eq10822186844117743572.png" alt="$y(t)$"></h1><!--introduction--><p>Con los valores de las constantes propuestos: <img src="Graficas_convolucion_eq02412091565985634100.png" alt="$$a=\frac{1}{2} , \beta=\omega=2 , \theta=\frac{\pi}{4}, \lambda=-1$"></p><!--/introduction--><p>Establecidos los valores de las constantes, las se&ntilde;ales <img src="Graficas_convolucion_eq14833433867325483769.png" alt="$x(t)$">  e  <img src="Graficas_convolucion_eq10822186844117743572.png" alt="$y(t)$"> son:</p><p><img src="Graficas_convolucion_eq02948444493865869360.png" alt="$x(t)=e^{-0.5t}\cos{(2t+\frac{\pi}{4})}u(t)$">  e  <img src="Graficas_convolucion_eq02568656941225394891.png" alt="$y(t)=e^{-t}u(t)$"></p><p>A continuaci&oacute;n se muestra el c&oacute;digo requerido para mostrar las graficas de <img src="Graficas_convolucion_eq14833433867325483769.png" alt="$x(t)$"> e <img src="Graficas_convolucion_eq10822186844117743572.png" alt="$y(t)$"> respectivamente</p><pre class="codeinput">t=[0:0.001:6];
+
+x= @(t) exp(-0.5.*t).*cos(2.*t+pi/4).*heaviside(t);
+
+y= @(t) exp(-t).*heaviside(t);
+
+subplot(2,1,1)
+plot(t,x(t),<span class="string">'b'</span>,<span class="string">'linewidth'</span>,1.5)
+plano = gca;
+plano.XAxisLocation = <span class="string">"origin"</span>;
+plano.YAxisLocation = <span class="string">"origin"</span>;
+axis([0 6 -0.8 0.8])
+grid <span class="string">on</span>
+xlabel(<span class="string">'${t}$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+ylabel(<span class="string">'$x(t)$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+title(<span class="string">'$x(t)=e^{-0.5t}\cos{(2t+\frac{\pi}{4})}u(t)$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+
+subplot(2,1,2)
+plot(t,y(t),<span class="string">'r'</span>,<span class="string">'linewidth'</span>,1.5)
+plano = gca;
+plano.XAxisLocation = <span class="string">"origin"</span>;
+plano.YAxisLocation = <span class="string">"origin"</span>;
+axis([0 6 0 1])
+grid <span class="string">on</span>
+xlabel(<span class="string">'${t}$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+ylabel(<span class="string">'$y(t)$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+title(<span class="string">'$y(t)=e^{-t}u(t)$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+</pre><img vspace="5" hspace="5" src="Graficas_convolucion_01.png" alt=""> <p>Apoyandonos de la deducci&oacute;n anteriormente mostrada de la formula <img src="Graficas_convolucion_eq17473808798161400003.png" alt="$(11)$"> para la convoluci&oacute;n de dos se&ntilde;ales causales: <img src="Graficas_convolucion_eq10635930559063113786.png" alt="$g(t)=\frac{-cos{(\theta-\phi)}e^{\lambda t}+e^{-at}cos{(\beta t+ \theta - \phi)}}{\sqrt{(a+ \lambda)^2+ \beta ^2}}u(t)$"></p><p>La convoluci&oacute;n de las se&ntilde;ales <img src="Graficas_convolucion_eq14833433867325483769.png" alt="$x(t)$">  e  <img src="Graficas_convolucion_eq10822186844117743572.png" alt="$y(t)$"> usando <img src="Graficas_convolucion_eq17473808798161400003.png" alt="$(11)$"> es:</p><pre class="codeinput">t=[0:0.01:6];
+
+phi= atan(-2/(-0.5));
+
+g= @(t) (-cos(pi/4-phi).*exp(-t)+exp(-0.5.*t).*cos(2.*t+pi/4-phi))/(sqrt((-0.5)^2+2^2)).*heaviside(t);
+
+figure
+plot(t,g(t),<span class="string">'m'</span>,<span class="string">'linewidth'</span>,1.5)
+plano = gca;
+plano.XAxisLocation = <span class="string">"origin"</span>;
+plano.YAxisLocation = <span class="string">"origin"</span>;
+axis([0 6 -0.3 0.2])
+grid <span class="string">on</span>
+xlabel(<span class="string">'${t}$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+ylabel(<span class="string">'$g(t)$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+title(<span class="string">'$g(t)=\int_{0}^{t}\!x(\tau)y(t- \tau)\,d\tau$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+</pre><img vspace="5" hspace="5" src="Graficas_convolucion_02.png" alt=""> <p>A continuaci&oacute;n se realizar&aacute; la misma metodolog&iacute;a para graficar y calcular la convoluci&oacute;n de las se&ntilde;ales <img src="Graficas_convolucion_eq14833433867325483769.png" alt="$x(t)$">  e  <img src="Graficas_convolucion_eq10822186844117743572.png" alt="$y(t)$"> usando <img src="Graficas_convolucion_eq14223275549767019285.png" alt="$(12)$"></p><p>Establecidos los valores de las constantes, las se&ntilde;ales <img src="Graficas_convolucion_eq14833433867325483769.png" alt="$x(t)$"> e <img src="Graficas_convolucion_eq10822186844117743572.png" alt="$y(t)$"> son:</p><p><img src="Graficas_convolucion_eq00031155042774784329.png" alt="$x(t)=e^{-0.5t}cos{(2t)}u(t)$">  e  <img src="Graficas_convolucion_eq14795685388255187105.png" alt="$y(t)=e^{-0.5t}sen{(2t)}u(t)$"></p><p>Las graficas de ambas se&ntilde;ales respectivamente son</p><pre class="codeinput">t=[0:0.01:6];
+
+x1= @(t) exp(-0.5.*t).*cos(2.*t).*heaviside(t);
+
+y1= @(t) exp(-0.5.*t).*sin(2.*t).*heaviside(t);
+
+subplot(2,1,1)
+plot(t,x1(t),<span class="string">'b'</span>,<span class="string">'linewidth'</span>,1.5)
+plano = gca;
+plano.XAxisLocation = <span class="string">"origin"</span>;
+plano.YAxisLocation = <span class="string">"origin"</span>;
+grid <span class="string">on</span>
+xlabel(<span class="string">'${t}$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+ylabel(<span class="string">'$x(t)$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+title(<span class="string">'$x(t)=e^{-0.5t}cos{(2t)}u(t)$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+
+subplot(2,1,2)
+plot(t,y1(t),<span class="string">'r'</span>,<span class="string">'linewidth'</span>,1.5)
+plano = gca;
+plano.XAxisLocation = <span class="string">"origin"</span>;
+plano.YAxisLocation = <span class="string">"origin"</span>;
+grid <span class="string">on</span>
+xlabel(<span class="string">'${t}$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+ylabel(<span class="string">'$y(t)$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+title(<span class="string">'$y(t)=e^{-0.5t}sen{(2t)}(t)$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+</pre><img vspace="5" hspace="5" src="Graficas_convolucion_03.png" alt=""> <p>Apoyandonos de la deducci&oacute;n anteriormente mostrada de la formula <img src="Graficas_convolucion_eq14223275549767019285.png" alt="$(12)$"> para la convoluci&oacute;n de dos se&ntilde;ales causales:</p><p><img src="Graficas_convolucion_eq11728636400504224335.png" alt="$g(t)=\frac{1}{2}te^{-at}sen{(\omega t)}u(t)$"></p><p>La convoluci&oacute;n de las se&ntilde;ales <img src="Graficas_convolucion_eq14833433867325483769.png" alt="$x(t)$">  e  <img src="Graficas_convolucion_eq10822186844117743572.png" alt="$y(t)$"> usando <img src="Graficas_convolucion_eq14223275549767019285.png" alt="$(12)$"> es:</p><p><img src="Graficas_convolucion_eq17581797378262461734.png" alt="$g(t)=\frac{1}{2}te^{-0.5t}sen{(2t)}u(t)$"></p><pre class="codeinput">t=[0:0.01:6];
+
+g1= @(t) (0.5).*t.*exp(-0.5.*t).*sin(2.*t).*heaviside(t);
+
+figure
+plot(t,g1(t),<span class="string">'m'</span>,<span class="string">'linewidth'</span>,1.5)
+plano = gca;
+plano.XAxisLocation = <span class="string">"origin"</span>;
+plano.YAxisLocation = <span class="string">"origin"</span>;
+grid <span class="string">on</span>
+xlabel(<span class="string">'${t}$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+ylabel(<span class="string">'$g(t)$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+title(<span class="string">'$g(t)=\frac{1}{2}te^{-0.5t}sen{(2t)}u(t)$'</span>,<span class="string">'interpreter'</span>,<span class="string">'latex'</span>)
+</pre><img vspace="5" hspace="5" src="Graficas_convolucion_04.png" alt=""> <p>En los siguientes enlaces se pueden consultar las simulaciones en Desmos de la convoluci&oacute;n de las  se&ntilde;ales para las formulas <img src="Graficas_convolucion_eq17473808798161400003.png" alt="$(11)$"> y <img src="Graficas_convolucion_eq14223275549767019285.png" alt="$(12)$"> son:</p><p>Convoluci&oacute;n utilizando la formula <img src="Graficas_convolucion_eq11789030934738136569.png" alt="$(11):$"> <a href="https://www.desmos.com/calculator/tiu49nanuo?lang=es">https://www.desmos.com/calculator/tiu49nanuo?lang=es</a></p><p>Convoluci&oacute;n utilizando la formula <img src="Graficas_convolucion_eq01009417845473480137.png" alt="$(12):$"> <a href="https://www.desmos.com/calculator/afopi7necl?lang=es">https://www.desmos.com/calculator/afopi7necl?lang=es</a></p><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2019b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Gráficas de las funciones $x(t)$ e $y(t)$
+% 
+% Con los valores de las constantes propuestos: $$a=\frac{1}{2} ,
+% \beta=\omega=2 , \theta=\frac{\pi}{4}, \lambda=-1$
+%%
+% Establecidos los valores de las constantes, las señales $x(t)$  e  $y(t)$
+% son:
+%
+% $x(t)=e^{-0.5t}\cos{(2t+\frac{\pi}{4})}u(t)$  e  $y(t)=e^{-t}u(t)$
+%%
+% A continuación se muestra el código requerido para mostrar las graficas
+% de $x(t)$ e $y(t)$ respectivamente
+
+t=[0:0.001:6];
+
+x= @(t) exp(-0.5.*t).*cos(2.*t+pi/4).*heaviside(t);
+
+y= @(t) exp(-t).*heaviside(t);
+
+subplot(2,1,1)
+plot(t,x(t),'b','linewidth',1.5)
+plano = gca;
+plano.XAxisLocation = "origin";
+plano.YAxisLocation = "origin";
+axis([0 6 -0.8 0.8])
+grid on
+xlabel('${t}$','interpreter','latex')
+ylabel('$x(t)$','interpreter','latex')
+title('$x(t)=e^{-0.5t}\cos{(2t+\frac{\pi}{4})}u(t)$','interpreter','latex')
+
+subplot(2,1,2)
+plot(t,y(t),'r','linewidth',1.5)
+plano = gca;
+plano.XAxisLocation = "origin";
+plano.YAxisLocation = "origin";
+axis([0 6 0 1])
+grid on
+xlabel('${t}$','interpreter','latex')
+ylabel('$y(t)$','interpreter','latex')
+title('$y(t)=e^{-t}u(t)$','interpreter','latex')
+%%
+% Apoyandonos de la deducción anteriormente mostrada de la formula $(11)$
+% para la convolución de dos señales causales: 
+% $g(t)=\frac{-cos{(\theta-\phi)}e^{\lambda t}+e^{-at}cos{(\beta t+ \theta - \phi)}}{\sqrt{(a+ \lambda)^2+ \beta ^2}}u(t)$
+%
+% La convolución de las señales $x(t)$  e  $y(t)$ usando $(11)$ es: 
+
+t=[0:0.01:6];
+
+phi= atan(-2/(-0.5));
+
+g= @(t) (-cos(pi/4-phi).*exp(-t)+exp(-0.5.*t).*cos(2.*t+pi/4-phi))/(sqrt((-0.5)^2+2^2)).*heaviside(t);
+
+figure
+plot(t,g(t),'m','linewidth',1.5)
+plano = gca;
+plano.XAxisLocation = "origin";
+plano.YAxisLocation = "origin";
+axis([0 6 -0.3 0.2])
+grid on
+xlabel('${t}$','interpreter','latex')
+ylabel('$g(t)$','interpreter','latex')
+title('$g(t)=\int_{0}^{t}\!x(\tau)y(t- \tau)\,d\tau$','interpreter','latex')
+%%
+% A continuación se realizará la misma metodología para graficar y calcular
+% la convolución de las señales $x(t)$  e  $y(t)$ usando $(12)$
+%
+% Establecidos los valores de las constantes, las señales $x(t)$ e $y(t)$
+% son: 
+%
+% $x(t)=e^{-0.5t}cos{(2t)}u(t)$  e  $y(t)=e^{-0.5t}sen{(2t)}u(t)$
+%
+% Las graficas de ambas señales respectivamente son
+
+t=[0:0.01:6];
+
+x1= @(t) exp(-0.5.*t).*cos(2.*t).*heaviside(t);
+
+y1= @(t) exp(-0.5.*t).*sin(2.*t).*heaviside(t);
+
+subplot(2,1,1)
+plot(t,x1(t),'b','linewidth',1.5)
+plano = gca;
+plano.XAxisLocation = "origin";
+plano.YAxisLocation = "origin";
+grid on
+xlabel('${t}$','interpreter','latex')
+ylabel('$x(t)$','interpreter','latex')
+title('$x(t)=e^{-0.5t}cos{(2t)}u(t)$','interpreter','latex')
+
+subplot(2,1,2)
+plot(t,y1(t),'r','linewidth',1.5)
+plano = gca;
+plano.XAxisLocation = "origin";
+plano.YAxisLocation = "origin";
+grid on
+xlabel('${t}$','interpreter','latex')
+ylabel('$y(t)$','interpreter','latex')
+title('$y(t)=e^{-0.5t}sen{(2t)}(t)$','interpreter','latex')
+%%
+% Apoyandonos de la deducción anteriormente mostrada de la formula $(12)$
+% para la convolución de dos señales causales: 
+%
+% $g(t)=\frac{1}{2}te^{-at}sen{(\omega t)}u(t)$
+%
+% La convolución de las señales $x(t)$  e  $y(t)$ usando $(12)$ es: 
+%
+% $g(t)=\frac{1}{2}te^{-0.5t}sen{(2t)}u(t)$
+
+t=[0:0.01:6];
+
+g1= @(t) (0.5).*t.*exp(-0.5.*t).*sin(2.*t).*heaviside(t);
+
+figure
+plot(t,g1(t),'m','linewidth',1.5)
+plano = gca;
+plano.XAxisLocation = "origin";
+plano.YAxisLocation = "origin";
+grid on
+xlabel('${t}$','interpreter','latex')
+ylabel('$g(t)$','interpreter','latex')
+title('$g(t)=\frac{1}{2}te^{-0.5t}sen{(2t)}u(t)$','interpreter','latex')
+%%
+%
+% En los siguientes enlaces se pueden consultar las simulaciones en Desmos
+% de la convolución de las  señales para las formulas $(11)$ y $(12)$ son: 
+% 
+% Convolución utilizando la formula $(11):$ <https://www.desmos.com/calculator/tiu49nanuo?lang=es> 
+%
+% Convolución utilizando la formula $(12):$ <https://www.desmos.com/calculator/afopi7necl?lang=es> 
+##### SOURCE END #####
+--></body></html>
